@@ -30,14 +30,10 @@ services:
   #     - POSTGRES_USER=postgres
   #     - POSTGRES_PASSWORD=postgres
 
-  db:
-    image: postgres
+  dynamodb:
+    image: amazon/dynamodb-local
+    command: "-jar DynamoDBLocal.jar -sharedDb -dbPath /home/dynamodblocal/data/"
     volumes:
-      - ./.local/data/db:/var/lib/postgresql/data
-    user: 1000:1000
+      - ./.local/data/dynamodb:/home/dynamodblocal/data
     ports:
-      - 5432:5432
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - "8081:8000"
