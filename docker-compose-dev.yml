@@ -7,7 +7,6 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
-      - ./.etc/pynamodb_settings_dev.py:/etc/pynamodb/global_default_settings.py
     ports:
       - "8080:8000"
     # environment:
