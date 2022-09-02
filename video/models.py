@@ -35,7 +35,7 @@ class KeywordModel(Model):
     """
     A DynamoDB Keyword
 
-    A keyword will be lowered and split the first 3 digit as hash key and the remainder as range
+    A keyword will be lowered and split the first 2 digit as hash key and the remainder as range
       key.
 
     Attributes
